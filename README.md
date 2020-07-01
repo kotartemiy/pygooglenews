@@ -2,7 +2,7 @@
 If Google News had a Python library
 
 
-Created by Artem from [newscatcherapi.com](newscatcherapi.com) but you do not need anything from us or from anyone else to get the software going, it just works out of the box.
+Created by Artem from [newscatcherapi.com](https://newscatcherapi.com/) but you do not need anything from us or from anyone else to get the software going, it just works out of the box.
 
 My [blog post about how I did it](https://codarium.substack.com/p/reverse-engineering-google-news-rss)
 
