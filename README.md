@@ -5,6 +5,9 @@ If Google News had a Python library
 Created by Artem from [newscatcherapi.com](newscatcherapi.com) but you do not need anything from us or from anyone else to get the software going, it just works out of the box.
 ## Demo
 
+![](pygooglenews-demo.gif)
+
+
 ### Table of Contents
 - [About](#about)
 - [Examples of Use Cases](#usecase)
@@ -300,7 +303,6 @@ print(s['feed'].title)
 
 The URL-escaped version of **`+`** (a plus sign) is `%2B`."
 
-**ALWAYS USE IT IN A URL-ESCAPED VERSION WHICH IS %2B (not +)**
 
 * Phrase Search
 
