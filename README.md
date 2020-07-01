@@ -56,7 +56,7 @@ This work is more of a collection of all things I could find out about how Googl
 
 ## Working with Google News in Production
 
-Before we start, if you want to integrate Google News data to your production then I would advise you to use one of the 3 methods described above. Why? Because you do not want your servers IP address to be locked by Google. Every time you call any function there is an HTTPS request to Google's servers. **Don't get me wrong, this Python package still works out of the box.**
+Before we start, if you want to integrate Google News data to your production then I would advise you to use one of the 3 methods described below. Why? Because you do not want your servers IP address to be locked by Google. Every time you call any function there is an HTTPS request to Google's servers. **Don't get me wrong, this Python package still works out of the box.**
 
 1. NewsCatcher's [Google News API](https://rapidapi.com/newscatcher-api-newscatcher-api-default/api/google-news?endpoint=apiendpoint_5e0fa919-2494-4b20-a212-d186b7e8c3d8) — all code is written for you, clean & structured JSON output. Low price. You can test it yourself with no credit card. Plus, [financial version of API](https://rapidapi.com/newscatcher-api-newscatcher-api-default/api/stock-google-news?endpoint=apiendpoint_c70050d2-34ac-4eac-a1b2-09aefb19d1a5) is also available.
 2. [ScrapingBee API](https://www.scrapingbee.com?fpr=artem26) which handles proxy rotation for you. Each function in this package has `scraping_bee` parameter where you paste your API key. You can also try it for free, no credit card required. See [example](#scrapingbeeexample)
