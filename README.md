@@ -348,7 +348,7 @@ The `allinurl:` query term restricts search results to documents that contain al
 3. `related:`
 
 
-**Tip**. If you want to build a near real-time feed for a specific topic, use `when='1h'`. If Google captured less than 100 articles over the past hour, you should be able to retrieve all of them.
+**Tip**. If you want to build a near real-time feed for a specific topic, use `when='1h'`. If Google captured fewer than 100 articles over the past hour, you should be able to retrieve all of them.
 
 Check the [Useful Links](notion://www.notion.so/Google-News-API-Documentation-b95117b9ecd94076bb1d8cf7c2957d78#useful-links) section if you want to dig into how Google Search works.
 
@@ -406,7 +406,7 @@ gn.top_news(proxies = {'https':'34.91.135.38:80'})
 
 ## **Advanced Querying Search Examples**
 
-### **Example 1. Search for artiles that mention `boeing` and do not mention `airbus`**
+### **Example 1. Search for articles that mention `boeing` and do not mention `airbus`**
 
 ```python
 from pygooglenews import GoogleNews
@@ -434,7 +434,7 @@ print(s['feed'].title)
 
 ```
 
-### **Example 3. Search for artiles that mention `boeing` in title and got published over the past hour**
+### **Example 3. Search for articles that mention `boeing` in title and got published over the past hour**
 
 ```python
 from pygooglenews import GoogleNews
@@ -448,7 +448,7 @@ print(s['feed'].title)
 
 ```
 
-### **Example 4. Search for artiles that mention `boeing` or `airbus`**
+### **Example 4. Search for articles that mention `boeing` or `airbus`**
 
 ```python
 from pygooglenews import GoogleNews
@@ -467,7 +467,7 @@ print(s['feed'].title)
 
 ## **Useful Links**
 
-[Stack Overflow tread from which it all began](https://stackoverflow.com/questions/51537063/url-format-for-google-news-rss-feed)
+[Stack Overflow thread from which it all began](https://stackoverflow.com/questions/51537063/url-format-for-google-news-rss-feed)
 
 [Google XML reference for the search query](https://developers.google.com/custom-search/docs/xml_results)
 
