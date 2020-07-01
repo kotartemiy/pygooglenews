@@ -3,10 +3,12 @@ If Google News had a Python library
 
 
 Created by Artem from [newscatcherapi.com](newscatcherapi.com) but you do not need anything from us or from anyone else to get the software going, it just works out of the box.
+
 ## Demo
 
 ![](pygooglenews-demo.gif)
 
+You might also like to check our [Google News API](https://rapidapi.com/newscatcher-api-newscatcher-api-default/api/google-news?endpoint=apiendpoint_5e0fa919-2494-4b20-a212-d186b7e8c3d8) or [Financial Google News API](https://rapidapi.com/newscatcher-api-newscatcher-api-default/api/stock-google-news?endpoint=apiendpoint_c70050d2-34ac-4eac-a1b2-09aefb19d1a5)
 
 ### Table of Contents
 - [About](#about)
@@ -54,7 +56,7 @@ This work is more of a collection of all things I could find out about how Googl
 
 Before we start, if you want to integrate Google News data to your production then I would advise you to use one of the 3 methods described above. Why? Because you do not want your servers IP address to be locked by Google. Every time you call any function there is an HTTPS request to Google's servers. **Don't get me wrong, this Python package still works out of the box.**
 
-1. NewsCatcher's Google News API — all code is written for you, clean & structured JSON output. Low price. You can test it yourself with no credit card
+1. NewsCatcher's [Google News API](https://rapidapi.com/newscatcher-api-newscatcher-api-default/api/google-news?endpoint=apiendpoint_5e0fa919-2494-4b20-a212-d186b7e8c3d8) — all code is written for you, clean & structured JSON output. Low price. You can test it yourself with no credit card. Plus, [financial version of API](https://rapidapi.com/newscatcher-api-newscatcher-api-default/api/stock-google-news?endpoint=apiendpoint_c70050d2-34ac-4eac-a1b2-09aefb19d1a5) is also available.
 2. [ScrapingBee API](https://www.scrapingbee.com?fpr=artem26) which handles proxy rotation for you. Each function in this package has `scraping_bee` parameter where you paste your API key. You can also try it for free, no credit card required. See [example](#scrapingbeeexample)
 3. Your own proxy — already have a pool of proxies? Each function in this package has `proxies` parameter (python dictionary) where you just paste your own proxies. 
 
@@ -483,7 +485,7 @@ print(s['feed'].title)
 
 ## **About me**
 
-My name is Artem. I ❤️ working with news data. I am a co-founder of [NewsCatcherAPI](https://newscatcherapi.com/)
+My name is Artem. I ❤️ working with news data. I am a co-founder of [NewsCatcherAPI](https://newscatcherapi.com/) - **Ultra-fast API to find news articles by any topic, country, language, website, or keyword**
 
 If you are interested in hiring me, please, contact me by email - **bugara.artem@gmail.com** or **artem@newscatcherapi.com**
 
