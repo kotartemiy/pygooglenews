@@ -10,7 +10,7 @@ class GoogleNews:
     def __init__(self, lang = 'en', country = 'US'):
         self.lang = lang.lower()
         self.country = country.upper()
-        self.BASE_URL = 'https://news.google.com/rss'
+        self.BASE_URL = "https://news.google.com/rss?hl={}&gl={}".format(self.lang,self.country)
 
     def __top_news_parser(self, text):
         """Return subarticles from the main and topic feeds"""
