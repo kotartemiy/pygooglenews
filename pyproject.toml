@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pygooglenews"
-version = "0.1.0"
+version = "0.1.1"
 description = "If Google News had a Python library"
 authors = ["kotartemiy <bugara.artem@gmail.com>"]
 license = "MIT"

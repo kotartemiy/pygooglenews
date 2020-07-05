@@ -32,7 +32,7 @@ class GoogleNews:
 
     def __ceid(self):
         """Compile correct country-lang parameters for Google News RSS URL"""
-        return '?ceid={}:{}'.format(self.country,self.lang)
+        return '?ceid={}:{}&hl={}&gl={}'.format(self.country,self.lang,self.lang,self.country)
 
     def __add_sub_articles(self, entries):
         for i, val in enumerate(entries):

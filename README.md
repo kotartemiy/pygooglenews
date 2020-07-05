@@ -22,6 +22,7 @@ You might also like to check our [Google News API](https://rapidapi.com/newscatc
 - [Documentation](#documentation)
 - [Advanced Query Search Examples](#examples)
 - [About me](#aboutme)
+- [Change Log](#changelog)
 
 <a name="about"/>
 
@@ -84,7 +85,7 @@ to collect all this informaion in one place.
 ## **Installation**
 
 ```shell script
-$ pip install pygooglenews
+$ pip install pygooglenews --upgrade
 
 ```
 
@@ -496,3 +497,10 @@ Follow me on 🖋 [Twitter](https://twitter.com/bugaralife) - I write about da
 Want to read about how it all was done? Subscribe to [CODARIUM](https://codarium.substack.com/)
 
 thx to Kizy
+
+---
+<a name="changelog"/>
+
+## **Change Log**
+
+v0.1.1 -- fixed language-country issues
