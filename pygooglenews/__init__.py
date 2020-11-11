@@ -76,6 +76,10 @@ class GoogleNews:
             raise Exception('This feed is not available')
 
         d = feedparser.parse(r.text)
+
+        if not scraping_bee and not proxies and len(d['entries']) == 0:
+            d = feedparser.parse(feed_url)
+
         return dict((k, d[k]) for k in ('feed', 'entries'))
 
     def __search_helper(self, query):
