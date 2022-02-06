@@ -105,7 +105,7 @@ class GoogleNews:
         d['entries'] = self.__add_sub_articles(d['entries'])
         return d
 
-    def topic_headlines(self, topic: str, proxies=None, hour_span: int = None, sort_by_publish_date: bool = True,
+    def topic_headlines(self, topic: str, proxies=None, time_span: timedelta = None, sort_by_publish_date: bool = True,
                         scraping_bee=None):
         """Return a list of all articles from the topic page of Google News
         given a country and a language"""
@@ -120,9 +120,9 @@ class GoogleNews:
             t = self.__parse_feed(self.BASE_URL + '/topics/{}'.format(topic) + self.__ceid(), proxies=proxies,
                                   scraping_bee=scraping_bee)
         d['feed'] = t['feed']
-        if hour_span is not None:
+        if time_span is not None:
             d['entries'] += [ta for ta in t['entries'] if
-                             datetime.now() - timedelta(hours=hour_span) <= datetime.fromtimestamp(
+                             datetime.now() - time_span <= datetime.fromtimestamp(
                                  mktime(ta['published_parsed']))]
         else:
             d['entries'] += t['entries']
@@ -139,7 +139,7 @@ class GoogleNews:
         else:
             raise Exception('unsupported topic')
 
-    def topic_multiple_headlines(self, topic_list: List[str], hour_span: int = None, sort_by_publish_date: bool = True,
+    def topic_multiple_headlines(self, topic_list: List[str], time_span: timedelta = None, sort_by_publish_date: bool = True,
                                  proxies=None, scraping_bee=None):
         """Return a list of all articles from the list of topic page of Google News
         given a country and a language"""
@@ -156,9 +156,9 @@ class GoogleNews:
                     t = self.__parse_feed(self.BASE_URL + '/topics/{}'.format(topic) + self.__ceid(), proxies=proxies,
                                           scraping_bee=scraping_bee)
                 d['feed'] = t['feed']
-                if hour_span is not None:
+                if time_span is not None:
                     d['entries'] += [ta for ta in t['entries'] if
-                                     datetime.now() - timedelta(hours=hour_span) <= datetime.fromtimestamp(
+                                     datetime.now() - time_span <= datetime.fromtimestamp(
                                          mktime(ta['published_parsed']))]
                 else:
                     d['entries'] += t['entries']
@@ -176,7 +176,7 @@ class GoogleNews:
         else:
             raise Exception('unsupported topic')
 
-    def geo_headlines(self, geo: str, proxies=None, scraping_bee=None, hour_span: int = None,
+    def geo_headlines(self, geo: str, proxies=None, scraping_bee=None, time_span: timedelta = None,
                       sort_by_publish_date: bool = True):
         """Return a list of all articles about a specific geolocation
         given a country and a language"""
@@ -184,9 +184,9 @@ class GoogleNews:
         t = self.__parse_feed(self.BASE_URL + '/headlines/section/geo/{}'.format(geo) + self.__ceid(),
                               proxies=proxies, scraping_bee=scraping_bee)
         d['feed'] = t['feed']
-        if hour_span is not None:
+        if time_span is not None:
             d['entries'] += [ta for ta in t['entries'] if
-                             datetime.now() - timedelta(hours=hour_span) <= datetime.fromtimestamp(
+                             datetime.now() - time_span <= datetime.fromtimestamp(
                                  mktime(ta['published_parsed']))]
         else:
             d['entries'] += t['entries']
@@ -198,7 +198,7 @@ class GoogleNews:
                                   reverse=True)
         return d
 
-    def geo_multiple_headlines(self, geo: List[str], hour_span: int = None, sort_by_publish_date: bool = True,
+    def geo_multiple_headlines(self, geo: List[str], time_span: timedelta = None, sort_by_publish_date: bool = True,
                                proxies=None, scraping_bee=None):
         """Return a list of all articles about a list of geolocation
         given a country and a language"""
@@ -209,9 +209,9 @@ class GoogleNews:
                 t = self.__parse_feed(self.BASE_URL + '/headlines/section/geo/{}'.format(n) + self.__ceid(),
                                       proxies=proxies, scraping_bee=scraping_bee)
                 d['feed'] = t['feed']
-                if hour_span is not None:
+                if time_span is not None:
                     d['entries'] += [ta for ta in t['entries'] if
-                                     datetime.now() - timedelta(hours=hour_span) <= datetime.fromtimestamp(
+                                     datetime.now() - time_span <= datetime.fromtimestamp(
                                          mktime(ta['published_parsed']))]
                 else:
                     d['entries'] += t['entries']
