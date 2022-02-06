@@ -84,6 +84,7 @@ to collect all this informaion in one place.
 
 ## **Installation**
 
+
 ```shell script
 $ pip install pygooglenews --upgrade
 
