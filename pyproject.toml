@@ -11,7 +11,7 @@ keywords = ["News", "RSS", "Scraping", "Data Mining"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
-feedparser = "^5.2.1"
+feedparser = "^6.0.0"
 beautifulsoup4 = "^4.9.1"
 dateparser = "^0.7.6"
 requests = "^2.24.0"
