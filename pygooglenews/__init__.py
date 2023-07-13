@@ -63,14 +63,10 @@ class GoogleNews:
 
         if proxies:
             r = requests.get(feed_url, proxies = proxies)
-        else:
-            r = requests.get(feed_url)
-
-        if scraping_bee:
+        elif scraping_bee:
             r = self.__scaping_bee_request(url = feed_url, api_key = scraping_bee)
         else:
             r = requests.get(feed_url)
-
 
         if 'https://news.google.com/rss/unsupported' in r.url:
             raise Exception('This feed is not available')
