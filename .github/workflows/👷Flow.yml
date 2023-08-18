@@ -1,0 +1,35 @@
+name: 👷Flow
+
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
+  merge_group:
+
+
+jobs:
+  lint:
+    uses: mraniki/coding_toolset/.github/workflows/🦺Lint.yml@main
+    secrets: inherit
+  test:
+    needs: [lint]
+    uses: mraniki/coding_toolset/.github/workflows/🧪Test.yml@main
+    secrets: inherit
+  security:
+    needs: [lint]
+    uses: mraniki/coding_toolset/.github/workflows/🔏Security.yml@main
+    secrets: inherit
+  build:
+    needs: [lint]
+    uses: mraniki/coding_toolset/.github/workflows/🐍Build.yml@main
+    secrets: inherit
+  release:
+    needs: [build]
+    uses: mraniki/coding_toolset/.github/workflows/📦Release.yml@main
+    secrets: inherit
+  docker:
+    needs: [release]
+    uses: mraniki/coding_toolset/.github/workflows/🐳Docker.yml@main
+    secrets: inherit

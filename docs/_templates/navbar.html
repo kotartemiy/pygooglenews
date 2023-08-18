@@ -1,0 +1,64 @@
+<div id="navbar" class="{{ theme_navbar_class }} navbar-default {% if theme_navbar_fixed_top|tobool -%} navbar-fixed-top{%- endif -%}">
+  <div class="container"> 
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ pathto(master_doc) }}" style="padding: 12px;">
+        {%- block sidebarlogo %}
+          {%- if logo %}
+            <span>
+              <img src="{{ pathto('_static/' + logo, 1) }}" class="logo">
+              <!-- <img src="{{ pathto('_static/alt-' + logo, 1) }}" class="logo-hover"> -->
+            </span>
+          {%- endif %}
+        {%- endblock %}
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse nav-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a role="button" class="nav-link" href="https://talkytrader.github.io/wiki/" class="caret">TalkyTrader</a>
+        </li>
+        <li class="dropdown">
+          <a role="button" href="https://talky.rtfd.io/" id="menu1" data-toggle="dropdown" >🗿 Talky</a>
+          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="menu1">
+            <a class="dropdown-item" href="https://talky.rtfd.io/01_start">🪙 Get started</a>
+            <li class="divider"></li>
+            <a class="dropdown-item" href="https://talky.rtfd.io/02_config">⚙️ Config</a>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a role="button" href="#" id="menu2" data-toggle="dropdown" >🔌 Plugins</a>
+          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="menu2">
+            <a class="dropdown-item" href="https://iamlistening.rtfd.io/">👂 IamListening</a>
+            <li class="divider"></li>
+            <a class="dropdown-item" href="https://findmyorder.rtfd.io/">🔎 FindMyOrder</a>
+            <li class="divider"></li>
+            <a class="dropdown-item" href="https://dxsp.rtfd.io/">⛓️ DXSP</a>
+            <li class="divider"></li>
+            <a class="dropdown-item" href="https://talky.rtfd.io">💱 CEX</a>
+            <li class="divider"></li>
+            <a class="dropdown-item" href="https://talky.rtfd.io">💁 Helper</a>
+            <li class="divider"></li>
+            <a class="dropdown-item" href="https://talkytrend.rtfd.io/">📰 Talkytrend</a>
+            <li class="divider"></li>
+            <a class="dropdown-item" href="https://myllm.rtfd.io/">🦾 MyLLM</a>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a role="button" href="#" id="menu3" data-toggle="dropdown">➕ More</a>
+          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="menu3">
+            <a class="dropdown-item" href="https://github.com/mraniki/tt">🆕 What's new?</a>
+            <li class="divider"></li>
+            <a class="dropdown-item" href="https://talky.rtfd.io">💬 Connect</a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,7 @@
+#Dynaconf
+settings.toml
+.secrets.*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +131,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.DS_Store
+dxsp/dxsp.sublime-workspace
+.vscode
+
+/bin
+/lib
+.secrets.*
+.settings.*
+*.cfg

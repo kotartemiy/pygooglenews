@@ -1,0 +1,41 @@
+/* 
+#073BD9
+#05C7F2
+#05F2F2
+#F2DA63
+#F2E6A7
+*/
+
+
+/* :root {
+  --body-bg: #292929;
+  --body-color: #E2E8E4;
+  }
+  
+  .navbar-inverse, .navbar-collapse,  .navbar-brand:hover, .navbar-default, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+      background-color: #222222;
+      
+    }
+    .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+      color: #ffcc00;
+  }
+    
+    a {
+      color: #ffcc00;
+    }
+    a:hover {
+      color: #ffcc00; ;
+    }
+  
+    a:hover code {
+      color: #ffcc00;
+    }
+
+    dt:target, span.highlighted {
+background-color: transparent;
+      
+    } */
+
+    .bd-footer {
+      display: none;
+  }

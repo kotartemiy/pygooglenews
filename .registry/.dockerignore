@@ -1,0 +1,6 @@
+# comment
+*/doc*
+*/examples*
+*/tests*
+*.md
+*.gitignore

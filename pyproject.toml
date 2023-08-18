@@ -1,12 +1,19 @@
 [tool.poetry]
-name = "pygooglenews"
+name = "igotnews"
 version = "0.1.2"
 description = "If Google News had a Python library"
-authors = ["kotartemiy <bugara.artem@gmail.com>"]
+authors = ["mraniki <8766259+mraniki@users.noreply.github.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://www.newscatcherapi.com"
 keywords = ["News", "RSS", "Scraping", "Data Mining"]
+packages = [
+    {include = "igotnews"}
+]
+
+[tool.poetry.urls]
+"Changelog" =  "https://github.com/mraniki/igotnews/blob/dev/CHANGELOG.rst"
+"Support" =  "https://github.com/mraniki/igotnews/discussions"
+"Issues" =  "https://github.com/mraniki/igotnews/issues"
 
 
 [tool.poetry.dependencies]
@@ -15,9 +22,117 @@ feedparser = "^6.0.10"
 beautifulsoup4 = "^4.12.2"
 dateparser = "^1.1.8"
 requests = "^2.31.0"
+loguru = "0.6.0"
 
-[tool.poetry.dev-dependencies]
 
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.group.dev.dependencies]
+python-semantic-release = "^8.0.2"
+ruff = ">=0.0.283,<0.0.284"
+
+[tool.ruff]
+select = [
+  "E",  # pycodestyle
+  "F",  # pyflakes
+  "I",  # isort
+]
+exclude = [
+  ".github/*",
+  "docs/*",
+]
+ignore = ["E401","F401","F811"]
+format = "github"
+fixable = ["ALL"]
+
+[tool.pylint.exceptions]
+overgeneral-exceptions = [
+    "builtins.BaseException",
+    "builtins.Exception",
+    "builtins.RuntimeError",
+]
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.0"
+pytest-cov = "^4.1"
+pytest-asyncio = "^0.21.0"
+pytest-mock = "^3.11.1"
+pytest-loguru = "^0.2.0"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.0.0"
+pydata-sphinx-theme = "^0.13.3"
+sphinx-hoverxref = "^1.3.0"
+sphinx-notfound-page = "^0.8.3"
+sphinx_copybutton = "0.5.2"
+myst_parser = "^2.0.0"
+sphinx_design = "^0.5.0"
+
+
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths = "tests"
+python_classes = "Test*"
+log_format = "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
+log_level = "DEBUG"
+
+[tool.coverage.run]
+omit = [
+    "tests/*",
+    "examples/*",
+    "docs/*",
+    "*/config.py"
+]
+
+
+[tool.semantic_release]
+upload_to_vcs_release = true
+version_variables = ["pyproject.toml:version","igotnews/__init__.py:__version__"]
+build_command = "pip install poetry && poetry build"
+commit_parser = "emoji"
+
+
+[tool.semantic_release.commit_parser_options]
+major_tags = [
+    "BREAKING",
+    "💥",
+    ":boom:",
+  ]
+minor_tags = ["feat",
+    "🥚",":egg:",
+    "🚀",":rocket:",
+    "💄",":lipstick:",
+    "✨",":sparkles:",
+]
+
+patch_tags = ["fix","bump","Update",
+    "🎨",":art:",
+    "🐛",":bug:",
+    "🚑",":ambulance:",
+    "⚡",":zap:",
+    "🔥",":fire:",
+    "🚨",":rotating_light:",
+    "♻️",":recycle:",
+    "🔧",":wrench:",
+    "⬆️",":arrow_up:",
+    "🩹",":adhesive_bandage:",
+    "👷",":construction_worker:",
+    "📝",":memo:",
+    "🔒",":lock:",
+    "👽",":alien:",
+    "💬",":speech_balloon:",
+    "🥅",":goal_net:",
+    "✅",":white_check_mark:",
+    "🐳",":whale:",
+    "🙈",":see_no_evil:",
+    "⚗️",":alembic:",
+    "🧐",":monocle_face:",
+    "🔇",":mute:",
+    "🔊",":volume:",
+]
