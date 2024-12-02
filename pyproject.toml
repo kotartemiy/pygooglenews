@@ -10,11 +10,12 @@ keywords = ["News", "RSS", "Scraping", "Data Mining"]
 
 
 [tool.poetry.dependencies]
-python = "^3.6"
-feedparser = "^5.2.1"
-beautifulsoup4 = "^4.9.1"
-dateparser = "^0.7.6"
-requests = "^2.24.0"
+python = "^3.6, ^3.12"
+feedparser = "^6.0.8"  
+beautifulsoup4 = "^4.11.1"  
+dateparser = "^1.1.1"  
+requests = "^2.28.1"  
+
 
 [tool.poetry.dev-dependencies]
 
