@@ -113,10 +113,25 @@ business = gn.topic_headlines('business')
 
 ```
 
+### **Stories by Multiple Topic**
+
+```python
+business = gn.topic_multiple_headlines(['business', 'world', 'nation'])
+
+```
+
 ### **Geolocation Specific Stories**
 
 ```python
 headquaters = gn.geo_headlines('San Fran')
+
+```
+
+
+### **Geolocation Multiple Specific Stories**
+
+```python
+headquaters = gn.geo_multiple_headlines(['Rome', 'Milan', 'Turin'])
 
 ```
 
