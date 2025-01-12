@@ -7,10 +7,11 @@ import requests
 
 
 class GoogleNews:
-    def __init__(self, lang = 'en', country = 'US'):
+    def __init__(self, lang = 'en', country = 'US', session = None):
         self.lang = lang.lower()
         self.country = country.upper()
         self.BASE_URL = 'https://news.google.com/rss'
+        self._session = session if session is not None else requests.Session()
 
     def __top_news_parser(self, text):
         """Return subarticles from the main and topic feeds"""
@@ -43,7 +44,7 @@ class GoogleNews:
         return entries
 
     def __scaping_bee_request(self, api_key, url):
-        response = requests.get(
+        response = self._session.get(
             url="https://app.scrapingbee.com/api/v1/",
             params={
                 "api_key": api_key,
@@ -62,14 +63,14 @@ class GoogleNews:
             raise Exception("Pick either ScrapingBee or proxies. Not both!")
 
         if proxies:
-            r = requests.get(feed_url, proxies = proxies)
+            r = self._session.get(feed_url, proxies = proxies)
         else:
-            r = requests.get(feed_url)
+            r = self._session.get(feed_url)
 
         if scraping_bee:
             r = self.__scaping_bee_request(url = feed_url, api_key = scraping_bee)
         else:
-            r = requests.get(feed_url)
+            r = self._session.get(feed_url)
 
 
         if 'https://news.google.com/rss/unsupported' in r.url:
